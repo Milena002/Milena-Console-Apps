@@ -21,6 +21,9 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void Run()
         {
+            InputMiles();
+            CalculateFeet();
+            OutputFeet();
 
         }
         /// <summary>
@@ -28,7 +31,9 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void InputMiles()
         {
-
+            Console.Write("Please enter the number of miles > ");
+            string value = Console.ReadLine();
+            miles = Convert.ToDouble(value); 
         }
         /// <summary>
         /// this is private method to change the distance to the feet
