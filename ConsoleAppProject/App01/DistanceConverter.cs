@@ -42,12 +42,13 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void ConvertDistance()
         {
-            fromUnit = SelectUnit("Please select the from distance unit > ");
-            toUnit = SelectUnit("Please select the to distance unit > ");
+            OutputHeading();
+            fromUnit = SelectUnit(" Please select the from distance unit > ");
+            toUnit = SelectUnit(" Please select the to distance unit > ");
 
-            OutputHeading($"Converting {fromUnit} to {toUnit}");
-
-           fromDistance= InputDistance($"Please enter the number of {fromUnit} > ");
+           
+        Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
+           fromDistance= InputDistance($" Please enter the number of {fromUnit} > ");
 
 
             CalculateDistance();
@@ -78,11 +79,11 @@ namespace ConsoleAppProject.App01
 
             else if (fromUnit == FEET && toUnit == METRES)
             {
-                toDistance = fromDistance * FEET_IN_METRES;
+                toDistance = fromDistance / FEET_IN_METRES;
             }
             else if (fromUnit == METRES && toUnit == FEET)
             {
-                toDistance = fromDistance / FEET_IN_METRES;
+                toDistance = fromDistance * FEET_IN_METRES;
             }
         }
 
@@ -93,7 +94,9 @@ namespace ConsoleAppProject.App01
         private string SelectUnit(string prompt)
         {
             string choice = DisplayChoices(prompt);
-            return ExecuteChoice(choice);
+            string unit = ExecuteChoice(choice);
+            Console.WriteLine($"\n You have chosen {unit}");
+            return unit;
         }
 
         private static string ExecuteChoice(string choice)
@@ -144,19 +147,17 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputDistance()
         {
-            Console.WriteLine($" {fromDistance} {fromUnit}" +
-                $" is {toDistance} {toUnit}!");
+            Console.WriteLine($" \n {fromDistance} {fromUnit}" +
+                $" is {toDistance} {toUnit}!\n");
         }
         
-        private void OutputHeading(String prompt)
+        private void OutputHeading()
         {
             Console.WriteLine("\n--------------------------------------------------");
             Console.WriteLine("                 Distance  Conventer                ");
             Console.WriteLine("                 by Milena Michalska                ");
             Console.WriteLine(" -------------------------------------------------\n");
 
-            Console.WriteLine(prompt);
-            Console.WriteLine();
         }
     }
 }
