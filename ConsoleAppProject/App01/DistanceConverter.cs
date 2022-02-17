@@ -3,7 +3,7 @@
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// This class offesr the user a way of converting between distances:
+    /// This class offer the user a way of converting between distances:
     ///1. a distance measured in miles into the same distance measured in feet.
     ///2. a distance measured in miles into the same distance measured in metres.
     ///3. a distance measured in feet into the same distance measured in miles.
