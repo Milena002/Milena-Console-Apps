@@ -5,7 +5,7 @@ namespace ConsoleAppProject.App01
     /// <summary>
     /// Units used to measure length or distance
     /// </summary>
-    public enum DistanceUnit
+    public enum DistanceUnits
     {
         
         NoUnit,

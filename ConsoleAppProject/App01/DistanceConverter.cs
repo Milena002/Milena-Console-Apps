@@ -69,6 +69,7 @@ namespace ConsoleAppProject.App01
         public const string YARD = "yard";
         public const string CENTIMETERS = "centimetres";
         public const string INCH = "inch";
+       
 
 
 
@@ -90,13 +91,25 @@ namespace ConsoleAppProject.App01
         public void ConvertDistance()
         {
             OutputHeading();
-            fromUnit = SelectUnit(" Please select the from distance unit > ");
-            toUnit = SelectUnit(" Please select the to distance unit > ");
+            do
+            {
+                fromUnit = SelectUnit(" Please select the from distance unit > ");
+                if(fromUnit == null)
+                     Console.WriteLine("Please select the correct option  from the list !");
+                
+            } while (fromUnit == null);
+            
+            do
+            {
+                toUnit = SelectUnit(" Please select the to distance unit > ");
+                if (toUnit == null)
+                    Console.WriteLine("Please select the correct option  from the list !");
+            } while (toUnit == null);
 
-           
-        Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
-           fromDistance= InputDistance($" Please enter the number of {fromUnit} > ");
 
+                 Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
+                fromDistance = InputDistance($" Please enter the number of {fromUnit} > ");
+            
 
             CalculateDistance();
 
@@ -349,6 +362,8 @@ namespace ConsoleAppProject.App01
 
         private static string ExecuteChoice(string choice)
         {
+           
+
             if (choice.Equals("1"))
             {
                 return FEET;
@@ -380,9 +395,11 @@ namespace ConsoleAppProject.App01
             {
                 return INCH;
             }
-          
-            return null;
-            
+            else
+            {
+                return null;
+            }
+         
             }
 
         private static string DisplayChoices(string prompt)
@@ -412,7 +429,20 @@ namespace ConsoleAppProject.App01
         {
             Console.Write(prompt);
             string value = Console.ReadLine();
-            return Convert.ToDouble(value); 
+           if(Double.TryParse(value, out double fromDistance))
+            {
+                fromDistance = Convert.ToDouble(value);
+                if(fromDistance < 0)
+                {
+                    fromDistance = InputDistance(" Wrong Distance! Please Input a valid distance > ");
+                }
+                return fromDistance;
+            }
+            else
+            {
+                fromDistance = InputDistance("Wrong Distance! Please Input a valid distance >");
+                return fromDistance;
+            }
         }
         
        
