@@ -85,6 +85,15 @@ namespace ConsoleAppProject.App01
             fromUnit = MILES;
             toUnit = FEET;
         }
+
+        public DistanceUnits DistanceUnits
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// this public method running the distance converter programm
         /// </summary>
