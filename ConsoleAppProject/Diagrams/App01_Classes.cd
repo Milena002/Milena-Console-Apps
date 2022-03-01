@@ -19,7 +19,7 @@
   <Class Name="ConsoleAppProject.App01.DistanceConverter">
     <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AggCSgAoEAQAACWUAAiCAAIBAAAAIEABCGQQ2SQACIg=</HashCode>
+      <HashCode>AggCSgAoEAQAACWUAAiCAAIBAAABIEABAGQQ2SQACIg=</HashCode>
       <FileName>App01\DistanceConverter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
