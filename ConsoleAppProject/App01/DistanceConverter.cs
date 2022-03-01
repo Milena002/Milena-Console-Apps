@@ -53,7 +53,7 @@ namespace ConsoleAppProject.App01
         public const double INCH_IN_MILES = 63360.24;
         public const double INCH_IN_FEET = 12;
         public const double INCH_IN_YARD = 36;
-        public const double INCH_IN_CENTIMETRES = 0.3937;
+        public const double CENTIMETRES_IN_INCH = 2.54;
 
 
 
@@ -322,12 +322,12 @@ namespace ConsoleAppProject.App01
             ///metres->centimetres
             else if (fromUnit == METRES && toUnit == INCH)
             {
-                toDistance = fromDistance * INCH_IN_METRES;
+                toDistance = fromDistance / INCH_IN_METRES;
             }
             ///inch->kilometres
             else if (fromUnit == INCH && toUnit == KILOMETRES)
             {
-                toDistance = fromDistance / INCH_IN_KILOMETRES;
+                toDistance = fromDistance * INCH_IN_KILOMETRES;
             }
             ///kilometres->inch
             else if (fromUnit == KILOMETRES && toUnit == INCH)
@@ -337,22 +337,22 @@ namespace ConsoleAppProject.App01
             ///inch -> centimetres
             else if (fromUnit == INCH && toUnit == CENTIMETERS)
             {
-                toDistance = fromDistance * INCH_IN_CENTIMETRES;
+                toDistance = fromDistance * CENTIMETRES_IN_INCH;
             }
             ///centimetres->inch
             else if (fromUnit == CENTIMETERS && toUnit == INCH)
             {
-                toDistance = fromDistance / INCH_IN_CENTIMETRES;
+                toDistance = fromDistance / CENTIMETRES_IN_INCH;
             }
             ///inch -> yard
             else if (fromUnit == INCH && toUnit == YARD)
             {
-                toDistance = fromDistance * INCH_IN_YARD;
+                toDistance = fromDistance / INCH_IN_YARD;
             }
             ///yard -> inch
             else if (fromUnit == YARD && toUnit == INCH)
             {
-                toDistance = fromDistance / INCH_IN_YARD;
+                toDistance = fromDistance * INCH_IN_YARD;
             }
 
         }
