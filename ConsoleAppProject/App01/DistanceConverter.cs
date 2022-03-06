@@ -69,17 +69,17 @@ namespace ConsoleAppProject.App01
         public const string YARD = "yard";
         public const string CENTIMETERS = "centimetres";
         public const string INCH = "inch";
-       
 
 
 
 
-        private double fromDistance;
-        private double toDistance;
 
-        private string fromUnit;
-        private string toUnit;
-        
+        public double fromDistance;
+        public double toDistance;
+
+        public string fromUnit;
+        public string toUnit;
+
         public DistanceConverter()
         {
             fromUnit = MILES;
@@ -126,7 +126,7 @@ namespace ConsoleAppProject.App01
 
         }
 
-        private void CalculateDistance()
+        public void CalculateDistance()
         {
             ///BASIC UNITS: MILE, FEET, METRES
             ///miles->feet
