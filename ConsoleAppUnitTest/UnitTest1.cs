@@ -14,11 +14,11 @@ namespace ConsoleAppUnitTest
             converter.fromUnit = DistanceConverter.MILES;
             converter.toUnit = DistanceConverter.FEET;
 
-            converter.fromDistance = 1.0;
+            converter.fromDistance = 2.0;
             //Act
             converter.CalculateDistance();
 
-            double expectedDistance = 5280;
+            double expectedDistance = 10560;
             //Assert
             Assert.AreEqual(expectedDistance, converter.toDistance);
 
@@ -33,11 +33,11 @@ namespace ConsoleAppUnitTest
             converter.toUnit = DistanceConverter.MILES;
             converter.fromUnit = DistanceConverter.FEET;
 
-            converter.fromDistance = 5280;
+            converter.fromDistance = 10560;
             //Act
             converter.CalculateDistance();
 
-            double expectedDistance = 1.0;
+            double expectedDistance = 2.0;
             //Assert
             Assert.AreEqual(expectedDistance, converter.toDistance);
         }
@@ -53,11 +53,11 @@ namespace ConsoleAppUnitTest
             converter.toUnit = DistanceConverter.MILES;
          
 
-            converter.fromDistance = 1609.34; ;
+            converter.fromDistance = 3218.69; 
             //Act
             converter.CalculateDistance();
 
-            double expectedDistance = 1.0;
+            double expectedDistance = 2.0000062137273664;
             //Assert
             Assert.AreEqual(expectedDistance, converter.toDistance);
         }
@@ -73,11 +73,11 @@ namespace ConsoleAppUnitTest
             converter.toUnit = DistanceConverter.METRES;
 
 
-            converter.fromDistance = 1.0  ;
+            converter.fromDistance = 2.0;
             //Act
             converter.CalculateDistance();
 
-            double expectedDistance = 1609.34; 
+            double expectedDistance = 3218.68; 
             //Assert
             Assert.AreEqual(expectedDistance, converter.toDistance);
         }
@@ -94,11 +94,11 @@ namespace ConsoleAppUnitTest
             converter.toUnit = DistanceConverter.METRES;
 
 
-            converter.fromDistance = 3.28084; 
+            converter.fromDistance = 6.56168;
             //Act
             converter.CalculateDistance();
 
-            double expectedDistance = 1.0;
+            double expectedDistance = 2.0;
             //Assert
             Assert.AreEqual(expectedDistance, converter.toDistance);
         }
@@ -113,11 +113,11 @@ namespace ConsoleAppUnitTest
             converter.toUnit = DistanceConverter.FEET;
 
 
-            converter.fromDistance = 1.0;
+            converter.fromDistance = 2.0;
             //Act
             converter.CalculateDistance();
 
-            double expectedDistance = 3.28084;
+            double expectedDistance = 6.56168;
             //Assert
             Assert.AreEqual(expectedDistance, converter.toDistance);
         }
