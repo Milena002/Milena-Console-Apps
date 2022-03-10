@@ -11,6 +11,10 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public class StudentGrades
     {
-
+        public void Run()
+        {
+            ConsoleHelper.OutputHeading("Students Marks");
+            
+        }
     }
 }

@@ -56,7 +56,7 @@ namespace ConsoleAppProject.Helpers
         /// will return any number as a double.  Any exception
         /// will generate an error message.
         /// </summary>
-        public static double InputNumber(string prompt)
+        internal static double InputNumber(string prompt)
         {
             double number = 0;
             bool isValid;

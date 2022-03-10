@@ -68,7 +68,7 @@ namespace ConsoleAppProject.App02
                     " to the nearest feet and inches: ");
 
            height = ConsoleHelper.InputNumber($"\n Enter your height in feet >");
-          int inches = (int) ConsoleHelper.InputNumber($"\n Enter your height in inches >",0,INCHES_IN_FEET);
+            int inches = (int) ConsoleHelper.InputNumber($"\n Enter your height in inches >",0,INCHES_IN_FEET);
             height = height * INCHES_IN_FEET + inches;
 
             Console.WriteLine($"\n Please enter your weight" +

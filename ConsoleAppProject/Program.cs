@@ -1,5 +1,6 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
+using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -39,7 +40,8 @@ namespace ConsoleAppProject
             string[] choices = new string[]
             {
                "Distance Converter",
-               "BMI Calculator"
+               "BMI Calculator",
+               "Student Marks",
             };
             ConsoleHelper.OutputTitle("Please selecet the application you wish to use:");
             choice = ConsoleHelper.SelectChoice(choices);
@@ -53,6 +55,11 @@ namespace ConsoleAppProject
             {
                 BMI calculator = new BMI();
                 calculator.Run();
+            }
+            else if (choice == 3)
+            {
+                StudentGrades grades = new StudentGrades();
+                grades.Run();
             }
         }
     }
