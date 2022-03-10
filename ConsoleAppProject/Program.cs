@@ -16,6 +16,15 @@ namespace ConsoleAppProject
     public static class Program
     {
         public static int choice;
+
+        public static BMI BMI
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;

@@ -188,5 +188,13 @@ namespace ConsoleAppProject.App02
             return choice;
 
         }
+
+        public BMI_Status BMI_Status
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
