@@ -1,5 +1,7 @@
 ﻿using System;
-
+/// <summary>
+/// This application converting distance units and below are all posibilites:
+/// </summary>
 namespace ConsoleAppProject.App01
 {
     /// <summary>
@@ -97,7 +99,7 @@ namespace ConsoleAppProject.App01
         /// <summary>
         /// this public method running the distance converter programm
         /// </summary>
-        public void ConvertDistance()
+        public void Run()
         {
             OutputHeading();
             do

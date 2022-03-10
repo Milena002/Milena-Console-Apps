@@ -95,7 +95,7 @@ namespace ConsoleAppProject.Helpers
         {
             bool isValid;
             double number;
-
+            Console.ForegroundColor = ConsoleColor.Yellow;
             do
             {
                 number = InputNumber(prompt);
@@ -124,8 +124,8 @@ namespace ConsoleAppProject.Helpers
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine("\n ---------------------------------");
-            Console.WriteLine($"    {heading}          ");
-            Console.WriteLine("     by Derek Peacock           ");
+            Console.WriteLine($"            {heading}          ");
+            Console.WriteLine("        by Milena Michalska          ");
             Console.WriteLine(" ---------------------------------" +
                 "\n");
 

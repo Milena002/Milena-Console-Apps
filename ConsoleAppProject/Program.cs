@@ -1,5 +1,5 @@
 ﻿using ConsoleAppProject.App01;
-using ConsoleAppProject.App03;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -10,12 +10,14 @@ namespace ConsoleAppProject
     /// when the application is started.  It will be used
     /// to start App01 to App05 for CO453 CW1
     /// 
-    /// This Project has been modified by:
+    /// This Project has been modified by: 
     /// Milena Michalska 10/02/2022
     /// </summary>
     public static class Program
     {
-        public static DistanceConverter DistanceConverter
+        public static int choice;
+
+        public static BMI BMI
         {
             get => default;
             set
@@ -34,9 +36,24 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
-            DistanceConverter converter = new DistanceConverter();
-            converter.ConvertDistance();
-         
+            string[] choices = new string[]
+            {
+               "Distance Converter",
+               "BMI Calculator"
+            };
+            ConsoleHelper.OutputTitle("Please selecet the application you wish to use:");
+            choice = ConsoleHelper.SelectChoice(choices);
+            
+            if(choice == 1)
+            {
+                DistanceConverter converter = new DistanceConverter();
+                converter.Run();
+            }
+            else if(choice == 2)
+            {
+                BMI calculator = new BMI();
+                calculator.Run();
+            }
         }
     }
 }
