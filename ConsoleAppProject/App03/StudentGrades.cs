@@ -31,21 +31,73 @@ namespace ConsoleAppProject.App03
         public void Run()
         {
             ConsoleHelper.OutputHeading("Students Marks");
-            
+           
+            string[] choices = 
+            {
+               "Input Marks",
+               "Output Marks",
+               "Output Stats",
+               "Output Grade Profile",
+               "Quit",
+               
+            };
+           
+            ConsoleHelper.OutputTitle("Please selecet the option you wish to use:");
+            int choice = ConsoleHelper.SelectChoice(choices);
+            SelectOptions(choice);
+           
+
+
         }
+
+        private void SelectOptions(int choice)
+        {
+            if (choice == 1)
+            {
+               
+                InputMarks();
+                Run();
+            }
+            else if (choice == 2)
+            {
+                
+                OutputMarks();
+                Run();
+            }
+            else if (choice == 3)
+            {
+                
+                CalculateStats();
+                Run();
+            }
+            else if (choice == 4)
+            {
+               
+               CalculateGradeProfile(); 
+                Run();
+            }
+            else
+            {
+
+                Environment.Exit(0);
+            }
+        }
+
         public StudentGrades()
         {
             Students = new string[]
             {
                 "Anna","Adam","Chloe", "Georgie",
-                "Jacob", "Jenna", "Laura", "Max",
-                "Nicole", "Tom", "Robin", "Victoria"
+                "Jacob", "Jenna", "Max",
+                 "Tom", "Robin", "Victoria"
             };
             GradeProfile = new int[(int)Grades.A + 1];
             Marks = new int[Students.Length];
 
-            InputMarks();
-            OutputMarks();
+            
+            
+            
+            
         }
         //in this method allows user to input marks
         public void InputMarks()
@@ -54,18 +106,21 @@ namespace ConsoleAppProject.App03
             for(int index = 0; index < Students.Length; index++)
             {
               Marks[index] = (int)ConsoleHelper.InputNumber($"Please enter a percentage mark " +
-                $"for: {Students[index]} ");
+                $"for: {Students[index]} > ", 0, 100);
             }
         }
         //this method lists all the students and displays
         //their name and current mark
         public void OutputMarks()
         {
-            ConsoleHelper.OutputTitle(" Student Marks");
+            ConsoleHelper.OutputTitle(" Student Marks: ");
             for (int index = 0; index < Students.Length; index++)
             {
+
+                Grades grade = ConvertToGrade(Marks[index]);
+                    string name = EnumHelper<Grades>.GetName(grade);
                Console.WriteLine($"Mark " +
-                $"for {Students[index]} = {Marks[index]}");
+                $"for {Students[index]} = {Marks[index]} grade {grade} {name}");
             }
         }
         // this method converting a student percentage mark to a letter grade
@@ -87,7 +142,7 @@ namespace ConsoleAppProject.App03
             {
                 return Grades.B;
             }
-            if (mark >= LowestGradeA && mark < HighestMark)
+            if (mark >= LowestGradeA && mark <= HighestMark)
             {
                 return Grades.A;
             }
@@ -109,10 +164,22 @@ namespace ConsoleAppProject.App03
                 if (mark < Minimum) Minimum = mark;
             }
             Mean = total / Marks.Length;
+            OutputStats();
         }
+
+        private void OutputStats()
+        {
+            ConsoleHelper.OutputTitle("Student Marks Statistics");
+            Console.WriteLine($"Marks length = {Marks.Length}");
+            Console.WriteLine($"Minimum mark = {Minimum}");
+            Console.WriteLine($"Mean of mark = {Mean}");
+            Console.WriteLine($"Maximum mark = {Maximum}");
+        }
+
         public void CalculateGradeProfile()
         {
-            for(int i=0; i< GradeProfile.Length; i++)
+            ConsoleHelper.OutputTitle("Grade Profile:");
+            for (int i=0; i< GradeProfile.Length; i++)
             {
                 GradeProfile[i] = 0;
             }
@@ -135,6 +202,7 @@ namespace ConsoleAppProject.App03
                 Console.WriteLine($"Grade {grade} {percentage} % Count {count}");
                 grade++;
             }
+            Console.WriteLine();
         }
     }
 }
