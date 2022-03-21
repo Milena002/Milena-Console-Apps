@@ -28,6 +28,8 @@ namespace ConsoleAppProject.App03
 
         public int Minimum { get; set; }
         public int Maximum { get; set; }
+        
+
         public void Run()
         {
             ConsoleHelper.OutputHeading("Students Marks");

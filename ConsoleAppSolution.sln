@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppUnitTest", "ConsoleAppUnitTest\ConsoleAppUnitTest.csproj", "{1B5D2457-19EF-40CA-AB66-77222A9CB064}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppUnitTest", "ConsoleAppUnitTest\ConsoleAppUnitTest.csproj", "{1B5D2457-19EF-40CA-AB66-77222A9CB064}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
