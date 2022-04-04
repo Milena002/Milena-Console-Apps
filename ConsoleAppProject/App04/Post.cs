@@ -6,6 +6,8 @@ namespace ConsoleAppProject.App04
 {
     public class Post
     {
+        public int PostId { get; }
+
         private int likes;
 
         private readonly List<String> comments;
@@ -16,9 +18,14 @@ namespace ConsoleAppProject.App04
 
         public DateTime Timestamp { get; }
 
+        public static int instances = 0;
+
         public Post(string author)
         {
-            Author = author;
+            instances++;
+            PostId = instances;
+
+            this.Author = author;
             Timestamp = DateTime.Now;
 
             likes = 0;
@@ -64,16 +71,17 @@ namespace ConsoleAppProject.App04
         /// (Currently: Print to the text terminal. This is simulating display 
         /// in a web browser for now.)
         ///</summary>
-        public void Display()
+        public virtual void Display()
         {
             Console.WriteLine();
-            Console.WriteLine($"    Author: {Author}");
+            Console.WriteLine($"    PostID:{PostId}");
+            Console.WriteLine($"    Author:{Author}");
             Console.WriteLine($"    Time Elpased: {FormatElapsedTime(Timestamp)}");
             Console.WriteLine();
 
             if (likes > 0)
             {
-                Console.WriteLine($"    Likes: -  {likes}  people like this.");
+                Console.WriteLine($"    Likes:  {likes}  people like this.");
             }
             else
             {
@@ -86,7 +94,7 @@ namespace ConsoleAppProject.App04
             }
             else
             {
-                Console.WriteLine($"    Comment(s): {comments.Count}  Click here to view.");
+                Console.WriteLine($"    Comment(s): {comments.Count} ");
             }
         }
 

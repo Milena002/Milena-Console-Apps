@@ -9,8 +9,8 @@ namespace ConsoleAppProject.App04
     /// text message. Other data, such as author and time, are also stored.
     /// </summary>
     /// <author>
-    /// Michael Kölling and David J. Barnes
-    /// version 0.1
+    /// Milena Michalska
+    /// version 1.0
     /// </author>
     public class MessagePost : Post
     {
@@ -18,7 +18,7 @@ namespace ConsoleAppProject.App04
 
         // an arbitrarily long, multi-line message
         public String Message { get; }
-
+        
       
 
         /// <summary>
@@ -28,6 +28,13 @@ namespace ConsoleAppProject.App04
         public MessagePost(String author, String text) :base(author)
         {
             Message = text;
+        }
+        public override void Display()
+        {
+            Console.WriteLine(" Message Post Display Method");
+            Console.WriteLine($" Message: {Message}");
+
+            base.Display();
         }
     }
 }
