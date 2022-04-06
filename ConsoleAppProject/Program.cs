@@ -35,6 +35,14 @@ namespace ConsoleAppProject
             }
         }
 
+        internal static NewsApp NewsApp
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
