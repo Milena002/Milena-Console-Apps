@@ -8,13 +8,7 @@ namespace ConsoleAppProject.App04
     {
         public NewsList News { get; set; } = new NewsList();
 
-        public NewsList NewsList
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        
 
         private void SelectOptions(int choice)
         {
