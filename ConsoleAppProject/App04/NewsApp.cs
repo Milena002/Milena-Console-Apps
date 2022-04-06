@@ -51,26 +51,29 @@ namespace ConsoleAppProject.App04
             }
             else if (choice == 8)
             {
-                DislikePost();
+                UnlikePost();
                 Run();
             }
             else
             {
-
-                Environment.Exit(0);
+                Quit();
+               
             }
         }
 
-      
+        private void Quit()
+        {
+            Environment.Exit(0);
+        }
 
-        private void DislikePost()
+        private void UnlikePost()
         {
             DisplayAll();
             int number = (int)ConsoleHelper.InputNumber(" Please choose which post You want to dislike : ", 1, News.PostList.Count);
 
             News.PostList[number - 1].Unlike();
 
-            Console.WriteLine("You have disliked the below post:");
+            Console.WriteLine("You have unliked the below post:");
             News.PostList[number - 1].Display();
         }
 
