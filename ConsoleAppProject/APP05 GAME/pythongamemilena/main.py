@@ -8,7 +8,7 @@ from pygame import mixer
 # declare the pygame
 pygame.init()
 
-# Create the screen for Hansel and Gretel game
+# Create the screen for my Hansel and Gretel game
 screen = pygame.display.set_mode((800, 600))
 
 # Forest background for the Hansel and Gretel game
