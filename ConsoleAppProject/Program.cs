@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -26,6 +27,22 @@ namespace ConsoleAppProject
             }
         }
 
+        public static StudentGrades StudentGrades
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal static NewsApp NewsApp
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -42,6 +59,7 @@ namespace ConsoleAppProject
                "Distance Converter",
                "BMI Calculator",
                "Student Marks",
+               "Social Network",
             };
             ConsoleHelper.OutputTitle("Please selecet the application you wish to use:");
             choice = ConsoleHelper.SelectChoice(choices);
@@ -60,6 +78,11 @@ namespace ConsoleAppProject
             {
                 StudentGrades grades = new StudentGrades();
                 grades.Run();
+            }
+            else if (choice == 4)
+            {
+                NewsApp network = new NewsApp();
+                network.Run();
             }
         }
     }
